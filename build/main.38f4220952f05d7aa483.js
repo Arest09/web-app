@@ -1,1 +1,0 @@
-(()=>{"use strict";var o={127:(o,e)=>{Object.defineProperty(e,"__esModule",{value:!0}),e.foo=void 0,e.foo=function(o){return console.log("hesllo"),"string"}}},e={};(0,function r(t){var n=e[t];if(void 0!==n)return n.exports;var s=e[t]={exports:{}};return o[t](s,s.exports,r),s.exports}(127).foo)(2)})();
