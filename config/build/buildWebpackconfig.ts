@@ -4,9 +4,10 @@ import { buildResolver } from "./buildResolver"
 import { BuildOptions } from "./types/congif"
 import webpack from "webpack"
 import { buildPlugins } from "./buildPlugins"
+import { buildDevServer } from "./buildDevServer"
 
 export function buildWebpackconfig(options: BuildOptions): webpack.Configuration {
-  const { mode, paths } = options
+  const { mode, paths, isDev } = options
   return {
     mode: mode,
     entry: paths.entry,
@@ -20,5 +21,7 @@ export function buildWebpackconfig(options: BuildOptions): webpack.Configuration
       clean: true,
     },
     plugins: buildPlugins(options),
+    devServer: isDev ? buildDevServer(options) : undefined,
+    devtool: isDev ? "inline-source-map" : undefined,
   }
 }

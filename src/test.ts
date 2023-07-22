@@ -1,4 +1,4 @@
   export function foo(arg: number): string {
-    console.log("hesllo")
+    console.log("hesllasaaaaaasssssssssasdasdaaaaaaaaaaado")
     return "string"
   }

@@ -1,19 +1,21 @@
 import path from "path"
-import HtmlWebpackPlugin from "html-webpack-plugin"
 import webpack from "webpack"
 import { buildWebpackconfig } from "./config/build/buildWebpackconfig"
-import { BuildPaths } from "./config/build/types/congif"
+import { BuildEnv, BuildPaths } from "./config/build/types/congif"
 
-const paths: BuildPaths = {
-  build: path.resolve(__dirname, "build"),
-  entry: path.resolve(__dirname, "src", "index.ts"),
-  html: path.resolve(__dirname, "public", "index.html"),
+export default (env: BuildEnv) => {
+  const paths: BuildPaths = {
+    build: path.resolve(__dirname, "build"),
+    entry: path.resolve(__dirname, "src", "index.ts"),
+    html: path.resolve(__dirname, "public", "index.html"),
+  }
+  console.log(env, "env")
+  const mode = env.mode || "development"
+  const PORT = env.port || 3000
+  
+  const isDev = mode === "development"
+  console.log(mode)
+
+  const config: webpack.Configuration = buildWebpackconfig({ mode: mode, paths, isDev, port: PORT })
+  return config
 }
-
-const mode = "development"
-
-const isDev = mode === "development"
-
-const config: webpack.Configuration = buildWebpackconfig({ mode: "development", paths, isDev })
-
-export default config
