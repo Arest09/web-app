@@ -3,6 +3,9 @@ import webpack from "webpack"
 import { BuildOptions } from "./types/congif"
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+
+
+  //если не используем ts подключаем babel
   const typeScriptLoader = {
     test: /\.tsx?$/,
     use: "ts-loader",
