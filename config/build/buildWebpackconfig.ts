@@ -1,4 +1,3 @@
-import path from "path"
 import { buildLoaders } from "./buildLoaders"
 import { buildResolver } from "./buildResolver"
 import { BuildOptions } from "./types/congif"
@@ -12,7 +11,7 @@ export function buildWebpackconfig(options: BuildOptions): webpack.Configuration
     mode: mode,
     entry: paths.entry,
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders(options),
     },
     resolve: buildResolver(),
     output: {

@@ -1,5 +1,4 @@
 import { render } from "react-dom"
-import { Foo } from "../components/Foo"
-import '../components/foo.scss'
+import App from "./App"
 
-render(<Foo />, document.getElementById("root"))
+render(<App />, document.getElementById("root"))
