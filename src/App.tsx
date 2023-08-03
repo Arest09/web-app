@@ -5,12 +5,13 @@ import { AboutPageAsync } from "./pages/aboutPage/AboutPage.async"
 import { Suspense } from "react"
 import { MainPageAsync } from "./pages/mainPage/MainPage.async"
 import { useTheme } from "./theme/useTheme"
+import { classNames } from "./helpers/classNames/classNames"
 
 function App() {
   const { toggleTheme, theme } = useTheme()
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames("app",{}, [theme])}>
       <Link to={"/main"}>главная</Link> <Link to={"/about"}>about</Link>
       <button onClick={toggleTheme}>theme</button>
       <Suspense fallback={<>loading</>}>
