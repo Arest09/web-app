@@ -13,7 +13,7 @@ export function buildWebpackconfig(options: BuildOptions): webpack.Configuration
     module: {
       rules: buildLoaders(options),
     },
-    resolve: buildResolver(),
+    resolve: buildResolver(paths),
     output: {
       filename: "[name].[contenthash].js",
       path: paths.build,
