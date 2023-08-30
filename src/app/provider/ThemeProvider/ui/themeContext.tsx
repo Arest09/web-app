@@ -1,12 +1,10 @@
-import { FC, useMemo, useState } from "react"
-import { createContext } from "react"
-import { PropsWithChildren } from "react"
+import { type FC, useMemo, useState, createContext, type PropsWithChildren } from 'react'
 
-export const LOCAL_STORAGE_THEME_KEY = "theme"
+export const LOCAL_STORAGE_THEME_KEY = 'theme'
 
 export enum Theme {
-  LIGHT = "light",
-  DARK = "dark",
+  LIGHT = 'light',
+  DARK = 'dark',
 }
 
 interface ThemeContextProps {
@@ -23,7 +21,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const defaultProps = useMemo(() => {
     return { theme, setTheme }
-  }, [theme]) //здесь мемоизация не имеет смысла
+  }, [theme]) // здесь мемоизация не имеет смысла
 
   return <ThemeContext.Provider value={defaultProps}>{children}</ThemeContext.Provider>
 }

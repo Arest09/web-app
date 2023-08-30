@@ -1,0 +1,15 @@
+.SideBar {
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  background-color: var(--primary);
+  color: var(--text-color);
+  padding: 10px;
+}
+
+.collapsed {
+  width: calc(var(--sidebar-width) - 110px);
+}
+
+.btn{
+    width: 100%;
+}

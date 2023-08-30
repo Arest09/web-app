@@ -1,0 +1,21 @@
+.Navbar {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  padding: 20px 25px;
+  height: var(--navbar-height);
+  box-shadow: var(--navbar-box-shadow);
+
+  .linkItem + .linkItem {
+    margin-left: 10px;
+  }
+}
+
+.links {
+  margin: 0 auto 0 15px;
+}
+
+.langSwitcher{
+  margin-left: 5px;
+}

@@ -1,0 +1,19 @@
+.Button {
+  background-color: transparent;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.primary {
+  color: #2b74d4;
+  padding: 3px 5px;
+
+  &:hover {
+    background-color: var(--secondary);
+  }
+}

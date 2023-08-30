@@ -1,26 +1,26 @@
-import { buildLoaders } from "./buildLoaders"
-import { buildResolver } from "./buildResolver"
-import { BuildOptions } from "./types/congif"
-import webpack from "webpack"
-import { buildPlugins } from "./buildPlugins"
-import { buildDevServer } from "./buildDevServer"
+import { buildLoaders } from './buildLoaders'
+import { buildResolver } from './buildResolver'
+import { type BuildOptions } from './types/congif'
+import type webpack from 'webpack'
+import { buildPlugins } from './buildPlugins'
+import { buildDevServer } from './buildDevServer'
 
-export function buildWebpackconfig(options: BuildOptions): webpack.Configuration {
+export function buildWebpackconfig (options: BuildOptions): webpack.Configuration {
   const { mode, paths, isDev } = options
   return {
-    mode: mode,
+    mode,
     entry: paths.entry,
     module: {
-      rules: buildLoaders(options),
+      rules: buildLoaders(options)
     },
     resolve: buildResolver(paths),
     output: {
-      filename: "[name].[contenthash].js",
+      filename: '[name].[contenthash].js',
       path: paths.build,
-      clean: true,
+      clean: true
     },
     plugins: buildPlugins(options),
     devServer: isDev ? buildDevServer(options) : undefined,
-    devtool: isDev ? "inline-source-map" : undefined,
+    devtool: isDev ? 'inline-source-map' : undefined
   }
 }

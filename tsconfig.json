@@ -10,7 +10,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     // baseUrl и paths нужен для того,чтобы ts понимал alias
-    //для webpack нужно прописать в resolver(buildResolver)
+    //для согласования того,что у нас в конфиге ts в webpack нужно прописать в resolver(buildResolver)
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
@@ -18,7 +18,8 @@
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "strictNullChecks": true,
     }
   }
 }

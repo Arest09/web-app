@@ -3,9 +3,22 @@
 @import "theme/dark.scss";
 @import "theme/light.scss";
 
-.app {
+* {
+  transition: color, background-color, 0.3s;
+}
+
+.App {
   font: var(--font-m);
   background-color: var(--bg-color);
   color: var(--primary-color);
   min-height: 100vh;
+}
+
+.page-content {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 15px;
 }
