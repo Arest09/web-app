@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react"],
+  plugins: ["react", "i18next", "@typescript-eslint"],
   rules: {
     "react/react-in-jsx-scope": "off",
     indent: "off",
@@ -31,6 +31,8 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": 0,
     "no-unused-vars": 0,
     "@typescript-eslint/no-unused-vars": 1,
-    "@typescript-eslint/naming-convention": 0
+    "@typescript-eslint/naming-convention": 0,
+    "@typescript-eslint/no-floating-promises": 0,
+    "i18next/no-literal-string": ["warn", { markupOnly: false }],
   },
 }

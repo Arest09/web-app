@@ -14,7 +14,7 @@ export function SideBar (props: SideBarProps) {
     setCollapsed(!collapsed)
   }
 
-  const { children, className } = props
+  const { className } = props
   return (
       <div className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}>
           SideBar

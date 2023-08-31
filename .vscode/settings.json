@@ -1,7 +1,14 @@
 {
   "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
   "i18n-ally.keystyle": "nested",
+
+  "scss.validate": false,
+  "css.validate": false,
+  "less.validate": false,
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "scss"],
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
+    "source.fixAll.stylelint": true
   }
 }
