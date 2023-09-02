@@ -2,6 +2,7 @@ import { classNames } from '@/shared/lib'
 import cls from './SideBar.module.scss'
 import { type PropsWithChildren, useState } from 'react'
 import { Button, ButtonTheme } from '@/shared/ui/Buttton/Button'
+import { useTranslation } from 'react-i18next'
 
 interface SideBarProps extends PropsWithChildren {
   className?: string
@@ -9,6 +10,7 @@ interface SideBarProps extends PropsWithChildren {
 
 export function SideBar (props: SideBarProps) {
   const [collapsed, setCollapsed] = useState(false)
+  const { t } = useTranslation()
 
   const onToggle = () => {
     setCollapsed(!collapsed)
@@ -17,9 +19,9 @@ export function SideBar (props: SideBarProps) {
   const { className } = props
   return (
       <div className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}>
-          SideBar
+          {'SideBar'}
           <Button className={classNames(cls.btn)} theme={ButtonTheme.PRIMARY} onClick={onToggle}>
-              toggle
+              {t('переключатель')}
           </Button>
       </div>
   )
