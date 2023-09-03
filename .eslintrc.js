@@ -25,6 +25,7 @@ module.exports = {
     indent: "off",
     "react/jsx-indent": [1, 4],
     "react/jsx-indent-props": [1, 2],
+    "@typescript-eslint/type-annotation-spacing": "warn",
     "@typescript-eslint/indent": ["warn", 2, { ignoredNodes: ["JSXElement *", "JSXElement"] }],
     "@typescript-eslint/strict-boolean-expressions": 0,
     "@typescript-eslint/prefer-nullish-coalescing": 0,
@@ -34,5 +35,6 @@ module.exports = {
     "@typescript-eslint/naming-convention": 0,
     "@typescript-eslint/no-floating-promises": 0,
     "i18next/no-literal-string": ["warn", { markupOnly: false }],
+    "@typescript-eslint/promise-function-async": 0
   },
 }

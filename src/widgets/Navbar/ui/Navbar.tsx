@@ -12,7 +12,7 @@ export function Navbar ({ className }: NavbarProps) {
   return (
       <div className={classNames(cls.Navbar, { second: false }, [className])}>
           <div className={cls.links}>
-              <AppLink className={classNames(cls.linkItem)} to={'/main'}>
+              <AppLink className={classNames(cls.linkItem)} to={'/'}>
                   главная
               </AppLink>
               <AppLink className={classNames(cls.linkItem)} to={'/about'}>

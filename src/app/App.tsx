@@ -4,7 +4,6 @@ import { classNames } from '@/shared/lib'
 import { AppRouter } from '@/app/provider/router'
 import { Navbar } from '@/widgets/Navbar'
 import { SideBar } from '@/widgets/SideBar'
-
 function App () {
   const { theme } = useTheme()
 
