@@ -18,9 +18,12 @@ export function SideBar (props: SideBarProps) {
 
   const { className } = props
   return (
-      <div className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}>
+      <div
+        data-testid = 'sidebar'
+        className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}>
           {'SideBar'}
-          <Button className={classNames(cls.btn)} theme={ButtonTheme.PRIMARY} onClick={onToggle}>
+          <Button data-testid = 'sidebar-toggle' className={classNames(cls.btn)}
+            theme={ButtonTheme.PRIMARY} onClick={onToggle}>
               {t('переключатель')}
           </Button>
       </div>

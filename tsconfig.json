@@ -2,6 +2,7 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
+    "typeRoots": ["./node_modules/@types"],
     "module": "ESNext",
     "target": "es5",
     "jsx": "react-jsx",
@@ -9,17 +10,24 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "strictNullChecks": false,
     // baseUrl и paths нужен для того,чтобы ts понимал alias(подсказывал абсолютные пути)
     //для согласования того,что у нас в конфиге ts в webpack нужно прописать в resolver(buildResolver)
     "baseUrl": ".",
+    "sourceMap": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"] //все модули начинающиеся с данного пути , будут иметь префикс @/
     }
   },
+    // Секция "include" позволяет скомпилировать все файлы, находящиеся в заданных папках.
+    // Если секция "files" и секция "include" заданы вместе, то будут скомпилированы только файлы, перечисленные в обеих секциях.
+    // Все файлы, на которые есть ссылки во включенных файлах из секции "files" и секции "include", также скомпилируются.
+  "include": ["config/jest/jest-setup.ts", "src/**/*"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",
       "strictNullChecks": true,
+      "types": ["node", "jest", "@testing-library/jest-dom"]
     }
-  }
+  },
 }

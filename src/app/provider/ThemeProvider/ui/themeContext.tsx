@@ -16,7 +16,7 @@ export const ThemeContext = createContext<ThemeContextProps>(null)
 
 const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.DARK
 
-export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
+export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme)
 
   const defaultProps = useMemo(() => {

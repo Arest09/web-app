@@ -14,6 +14,12 @@ module.exports = {
         sourceType: "script",
       },
     },
+    {
+      files : ["**/src/**/*.test.{ts,tsx}"],
+      rules:{
+        "i18next/no-literal-string":"off",
+      }
+    }
   ],
   parserOptions: {
     ecmaVersion: "latest",
@@ -35,6 +41,7 @@ module.exports = {
     "@typescript-eslint/naming-convention": 0,
     "@typescript-eslint/no-floating-promises": 0,
     "i18next/no-literal-string": ["warn", { markupOnly: false }],
-    "@typescript-eslint/promise-function-async": 0
+    "@typescript-eslint/promise-function-async": 0,
+    "max-len":["warn",{ignoreComments:true,code:100}]
   },
 }
