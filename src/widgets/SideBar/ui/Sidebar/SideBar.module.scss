@@ -4,12 +4,24 @@
   background-color: var(--primary);
   color: var(--text-color);
   padding: 10px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 2px;
+    background-color: var(--text-color);;
+    right: 1px;
+    border-radius: 26px;
+  }
 }
 
 .collapsed {
   width: calc(var(--sidebar-width) - 110px);
 }
 
-.btn{
+.btn {
   width: 100%;
 }

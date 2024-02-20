@@ -6,6 +6,8 @@
   padding: 20px 25px;
   height: var(--navbar-height);
   box-shadow: var(--navbar-box-shadow);
+  position: relative;
+  z-index: 1;
 
   .linkItem + .linkItem {
     margin-left: 10px;

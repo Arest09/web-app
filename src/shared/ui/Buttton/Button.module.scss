@@ -6,11 +6,39 @@
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+  color: var(--text-color);
+}
+
+.clear{
+  &:hover {
+    background-color: var(--primary);
+  }
 }
 
 .primary {
   color: #2b74d4;
   padding: 3px 5px;
+  background-color: var(--primary);
+
+  &:hover {
+    background-color: var(--secondary);
+  }
+}
+
+.secondary {
+  color: #2b74d4;
+  padding: 3px 5px;
+  background-color: var(--secondary);
+
+  &:hover {
+    background-color: var(--primary);
+  }
+}
+
+.outline{
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  padding: 5px 7px;
 
   &:hover {
     background-color: var(--secondary);
