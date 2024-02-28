@@ -10,5 +10,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.fixAll.stylelint": "explicit"
-  }
+  },
+  "jestrunner.configPath": "/config/jest/jest.config.ts",
 }

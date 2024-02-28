@@ -1,7 +1,7 @@
 import React from "react";
-export default "SvgURL";
-export const ReactComponent = ({ width, height }) => (
-  <div>
-    w-{width} h-{height}
-  </div>
-);
+ const reactComponent = () => {
+
+  return <div/>
+}
+
+export default reactComponent

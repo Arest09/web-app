@@ -22,7 +22,7 @@
     // Секция "include" позволяет скомпилировать все файлы, находящиеся в заданных папках.
     // Если секция "files" и секция "include" заданы вместе, то будут скомпилированы только файлы, перечисленные в обеих секциях.
     // Все файлы, на которые есть ссылки во включенных файлах из секции "files" и секции "include", также скомпилируются.
-  "include": ["config/jest/jest-setup.ts", "src/**/*"],
+  "include": ["config/jest/jest-setup.ts", "src/**/*", "./webpack.config.ts"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",
