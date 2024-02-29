@@ -9,20 +9,20 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: ['17.x']
+        node-version: [17.x]
     steps:
       - name: checkout 
         uses: actions/checkout@v4
       - name: Starting Node.js
         uses: actions/setup-node@v4
         with:
-          node-vesrion: ${{matrix.node-version}}  
+          node-version: ${{ matrix.node-version }}  
       - name: install node_modules
         run: npm install
       - name: build production project
         run: npm run build:prod
       - name: linting ts
-        run: npm run lint:ts
+        run: npm run lint:ts 
       - name: linting css
         run: npm run lint:css
       - name: unit testing
