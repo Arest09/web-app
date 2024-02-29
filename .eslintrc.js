@@ -1,4 +1,5 @@
 module.exports = {
+  ignorePatterns: ["/**/*.*", "!src/**/*.*"],
   env: {
     browser: true,
     es2021: true,
@@ -8,6 +9,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:storybook/recommended"
   ],
+  
   overrides: [
     {
       env: {

@@ -1,3 +1,4 @@
+/* eslint-disable n/handle-callback-err */
 import { PageError } from '@/widgets/PageError'
 import React, { type ReactNode, type ErrorInfo } from 'react'
 
