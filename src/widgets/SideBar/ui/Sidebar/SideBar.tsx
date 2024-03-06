@@ -1,8 +1,12 @@
 import { classNames } from '@/shared/lib'
 import cls from './SideBar.module.scss'
 import { type PropsWithChildren, useState } from 'react'
-import { Button, ButtonTheme } from '@/shared/ui/Buttton/Button'
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Buttton/Button'
 import { useTranslation } from 'react-i18next'
+import { AppLink } from '@/shared/ui/AppLink/AppLink'
+import { routePath } from '@/shared/config'
+import MainIcon from '@/shared/assets/icons/main.svg'
+import AboutIcon from '@/shared/assets/icons/about.svg'
 
 interface SideBarProps extends PropsWithChildren {
   className?: string
@@ -19,12 +23,28 @@ export function SideBar (props: SideBarProps) {
   const { className } = props
   return (
       <div
-        data-testid = 'sidebar'
+        data-testid='sidebar'
         className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}>
-          {'SideBar'}
-          <Button data-testid = 'sidebar-toggle' className={classNames(cls.btn)}
-            theme={ButtonTheme.PRIMARY} onClick={onToggle}>
-              {t('переключатель')}
+          <div className={cls.links}>
+              <AppLink
+                className={classNames(cls.linkItem, { [cls.collapsedLink]: collapsed })}
+                to={routePath.main}>
+                  {collapsed ? <MainIcon /> : t('главная')}
+              </AppLink>
+              <AppLink
+                className={classNames(cls.linkItem, { [cls.collapsedLink]: collapsed })}
+                to={routePath.about}>
+                  {collapsed ? <AboutIcon /> : t('о сайте')}
+              </AppLink>
+          </div>
+          <Button
+            data-testid='sidebar-toggle'
+            square
+            className={classNames(cls.toggle)}
+            theme={ButtonTheme.BACKGROND_INVERTED}
+            size={ButtonSize.L}
+            onClick={onToggle}>
+              {collapsed ? '>' : '<'}
           </Button>
       </div>
   )

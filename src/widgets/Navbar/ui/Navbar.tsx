@@ -14,12 +14,7 @@ export function Navbar ({ className }: NavbarProps) {
   return (
       <div className={classNames(cls.Navbar, { second: false }, [className])}>
           <div className={cls.links}>
-              <AppLink className={classNames(cls.linkItem)} to={'/'}>
-                  {t('главная')}
-              </AppLink>
-              <AppLink className={classNames(cls.linkItem)} to={'/about'}>
-                  {t('о сайте')}
-              </AppLink>
+
           </div>
           <ThemeSwitcher />
           <LangSwitcher className={cls.langSwitcher} />
