@@ -4,7 +4,7 @@ import { PageError } from './PageError'
 
 const meta: Meta<typeof PageError> = {
   component: PageError,
-  title: 'widgets/PageError'
+  title: 'widgets/PageError',
 }
 
 type Story = StoryObj<typeof PageError>
@@ -16,6 +16,4 @@ type Story = StoryObj<typeof PageError>
  */
 export default meta
 
-export const DEFAULT: Story = {
-
-}
+export const DEFAULT: Story = {}

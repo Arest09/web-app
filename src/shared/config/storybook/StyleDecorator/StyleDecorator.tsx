@@ -5,8 +5,8 @@ import { BrowserRouter } from 'react-router-dom'
 
 export const StyleDecorator: Decorator = (Story) => {
   return (
-      <BrowserRouter>
-          <ThemeProvider>{Story()}</ThemeProvider>
-      </BrowserRouter>
+    <BrowserRouter>
+      <ThemeProvider>{Story()}</ThemeProvider>
+    </BrowserRouter>
   )
 }

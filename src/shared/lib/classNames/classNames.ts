@@ -10,6 +10,8 @@ export const classNames = (cls: string, mods: Mods = {}, additional: string[] = 
       .map(([key, value]) => {
         return key
       }),
-    ...additional.filter(Boolean)
-  ].join(' ').trim()
+    ...additional.filter(Boolean),
+  ]
+    .join(' ')
+    .trim()
 }

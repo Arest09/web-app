@@ -6,7 +6,7 @@ import { Theme } from '@/app/provider/ThemeProvider'
 
 const meta: Meta<typeof Loader> = {
   component: Loader,
-  title: 'Lib/Loader'
+  title: 'Lib/Loader',
 }
 
 type Story = StoryObj<typeof Loader>
@@ -19,7 +19,5 @@ type Story = StoryObj<typeof Loader>
 export default meta
 
 export const DEFAULT: Story = {
-  decorators: [
-    ThemeDecorator(Theme.DARK)
-  ]
+  decorators: [ThemeDecorator(Theme.DARK)],
 }

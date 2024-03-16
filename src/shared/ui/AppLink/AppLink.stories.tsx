@@ -6,7 +6,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 
 const meta: Meta<typeof AppLink> = {
   component: AppLink,
-  title: 'Shared/AppLink'
+  title: 'Shared/AppLink',
 }
 
 type Story = StoryObj<typeof AppLink>
@@ -21,31 +21,29 @@ export default meta
 export const PRIMARY_DARK: Story = {
   args: {
     children: 'ссылка 1',
-    theme: AppLinkTheme.PRIMARY
+    theme: AppLinkTheme.PRIMARY,
   },
-  decorators: [
-    ThemeDecorator(Theme.DARK)
-  ]
+  decorators: [ThemeDecorator(Theme.DARK)],
 }
 
 export const PRIMARY_LIGHT: Story = {
   args: {
     children: 'ссылка 2',
-    theme: AppLinkTheme.PRIMARY
-  }
+    theme: AppLinkTheme.PRIMARY,
+  },
 }
 
 export const SECONDARY: Story = {
   args: {
     children: 'ссылка 2',
-    theme: AppLinkTheme.SECONDARY
-  }
+    theme: AppLinkTheme.SECONDARY,
+  },
 }
 
 export const SECONDARY_DARK: Story = {
   args: {
     children: 'ссылка 2',
-    theme: AppLinkTheme.SECONDARY
+    theme: AppLinkTheme.SECONDARY,
   },
-  decorators: [ThemeDecorator(Theme.DARK)]
+  decorators: [ThemeDecorator(Theme.DARK)],
 }

@@ -14,12 +14,15 @@ const config: StorybookConfig = {
     "storybook-css-modules",
     "@storybook/preset-scss",
   ],
+  core:{
+    disableTelemetry: true
+  },
   framework: {
     name: "@storybook/react-webpack5",
     options: {},
   },
   docs: {
-    autodocs: "tag",
+    autodocs: true,
   },
   webpackFinal: async (config: webpack.Configuration, { configType }) => {
     if (config.resolve) {

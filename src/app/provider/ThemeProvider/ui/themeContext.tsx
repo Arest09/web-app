@@ -12,15 +12,24 @@ interface ThemeContextProps {
   setTheme?: (theme: Theme) => void
 }
 
+interface ThemeProviderProps extends PropsWithChildren {
+  initialTheme?: Theme
+}
+
 export const ThemeContext = createContext<ThemeContextProps>({})
 
 const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.DARK
 
-export const ThemeProvider = ({ children }: PropsWithChildren) => {
-  const [theme, setTheme] = useState<Theme>(defaultTheme)
+export const ThemeProvider = (props: ThemeProviderProps) => {
+  const { initialTheme, children } = props
+
+  const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme)
 
   const defaultProps = useMemo(() => {
-    return { theme, setTheme }
+    return {
+      theme,
+      setTheme,
+    }
   }, [theme]) // здесь мемоизация не имеет смысла
 
   return <ThemeContext.Provider value={defaultProps}>{children}</ThemeContext.Provider>

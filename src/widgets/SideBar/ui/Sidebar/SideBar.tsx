@@ -12,7 +12,7 @@ interface SideBarProps extends PropsWithChildren {
   className?: string
 }
 
-export function SideBar (props: SideBarProps) {
+export function SideBar(props: SideBarProps) {
   const [collapsed, setCollapsed] = useState(false)
   const { t } = useTranslation()
 
@@ -22,30 +22,34 @@ export function SideBar (props: SideBarProps) {
 
   const { className } = props
   return (
-      <div
-        data-testid='sidebar'
-        className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}>
-          <div className={cls.links}>
-              <AppLink
-                className={classNames(cls.linkItem, { [cls.collapsedLink]: collapsed })}
-                to={routePath.main}>
-                  {collapsed ? <MainIcon /> : t('главная')}
-              </AppLink>
-              <AppLink
-                className={classNames(cls.linkItem, { [cls.collapsedLink]: collapsed })}
-                to={routePath.about}>
-                  {collapsed ? <AboutIcon /> : t('о сайте')}
-              </AppLink>
-          </div>
-          <Button
-            data-testid='sidebar-toggle'
-            square
-            className={classNames(cls.toggle)}
-            theme={ButtonTheme.BACKGROND_INVERTED}
-            size={ButtonSize.L}
-            onClick={onToggle}>
-              {collapsed ? '>' : '<'}
-          </Button>
+    <div
+      data-testid="sidebar"
+      className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}
+    >
+      <div className={cls.links}>
+        <AppLink
+          className={classNames(cls.linkItem, { [cls.collapsedLink]: collapsed })}
+          to={routePath.main}
+        >
+          {collapsed ? <MainIcon /> : t('главная')}
+        </AppLink>
+        <AppLink
+          className={classNames(cls.linkItem, { [cls.collapsedLink]: collapsed })}
+          to={routePath.about}
+        >
+          {collapsed ? <AboutIcon /> : t('о сайте')}
+        </AppLink>
       </div>
+      <Button
+        data-testid="sidebar-toggle"
+        square
+        className={classNames(cls.toggle)}
+        theme={ButtonTheme.BACKGROND_INVERTED}
+        size={ButtonSize.L}
+        onClick={onToggle}
+      >
+        {collapsed ? '>' : '<'}
+      </Button>
+    </div>
   )
 }

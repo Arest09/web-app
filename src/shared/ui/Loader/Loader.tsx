@@ -5,24 +5,24 @@ interface LoaderProps {
   className?: string
 }
 
-export function Loader (props: LoaderProps) {
+export function Loader(props: LoaderProps) {
   const { className } = props
   return (
-      <div className={classNames('', {}, [className])}>
-          <div className='lds-spinner'>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-          </div>
+    <div className={classNames('', {}, [className])}>
+      <div className="lds-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
+    </div>
   )
 }

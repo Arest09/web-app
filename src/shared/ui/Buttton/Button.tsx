@@ -1,21 +1,21 @@
 import { classNames } from '@/shared/lib'
 import { type PropsWithChildren } from 'react'
 import cls from './Button.module.scss'
+import { Portal } from '../Portal/Portal'
 
 export enum ButtonTheme {
   PRIMARY = 'primary',
   OUTLINE = 'outline',
   CLEAR = 'clear',
   BACKGROUND = 'background',
-  BACKGROND_INVERTED = 'backgroundInverted'
+  BACKGROND_INVERTED = 'backgroundInverted',
 }
 
 export enum ButtonSize {
   S = 'size_s',
   M = 'size_m',
   L = 'size_l',
-  XL = 'size_xl'
-
+  XL = 'size_xl',
 }
 
 interface ButtonProps extends PropsWithChildren, React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -26,19 +26,18 @@ interface ButtonProps extends PropsWithChildren, React.ButtonHTMLAttributes<HTML
 }
 
 export const Button = (props: ButtonProps) => {
-  const {
-    className, children, theme = ButtonTheme.PRIMARY, square,
-    size, ...otherProps
-  } = props
+  const { className, children, theme = ButtonTheme.PRIMARY, square, size, ...otherProps } = props
 
   const mods: Record<string, boolean> = {
-    [cls.square]: square
+    [cls.square]: square,
   }
 
   return (
-      <button className={classNames(cls.Button, { ...mods },
-        [className, cls[theme], cls[size]])} {...otherProps}>
-          {children}
-      </button>
+     <button
+      className={classNames(cls.Button, { ...mods }, [className, cls[theme], cls[size]])}
+      {...otherProps}
+    >
+      {children}
+    </button>
   )
 }

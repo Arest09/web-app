@@ -3,6 +3,6 @@ import { render } from '@testing-library/react'
 
 describe('Theme Switcher', () => {
   test('tesst render', () => {
-    render(<ThemeSwitcher/>)
+    render(<ThemeSwitcher />)
   })
 })

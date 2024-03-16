@@ -3,14 +3,17 @@
 @import "theme/dark";
 @import "theme/light";
 
-* {
-  transition: color, background-color, 0.3s;
+// * {
+//   transition: color, background-color, 0.3s;
+// }
+
+body{
+  font: var(--font-m);
+  color: var(--primary-color);
 }
 
 .App {
-  font: var(--font-m);
   background-color: var(--bg-color);
-  color: var(--primary-color);
   min-height: 100vh;
 }
 

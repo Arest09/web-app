@@ -21,12 +21,11 @@ i18n
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     fallbackLng: 'ru',
-    debug: !!__IS__DEV,
+    debug: false, //! !__IS__DEV
 
     interpolation: {
-      escapeValue: false // not needed for react as it escapes by default
-    }
-
+      escapeValue: false, // not needed for react as it escapes by default
+    },
   })
 
 export default i18n

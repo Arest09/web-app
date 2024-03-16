@@ -10,29 +10,28 @@ interface ThemeSwitcherProps {
 }
 
 const moonStyle: CSSProperties = {
-  fill: 'rgb(196 187 24)'
+  fill: 'rgb(196 187 24)',
 }
 
 const iconStyle: CSSProperties = {
-  width: '30px'
+  width: '30px',
 }
 
 export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
   const { className, ...otherProps } = props
   const { toggleTheme, theme } = useTheme()
   return (
-      <Button
-        theme={ButtonTheme.CLEAR}
-        className={classNames('', {}, [className])}
-        onClick={toggleTheme}
-        {...otherProps}>
-          {theme === Theme.LIGHT
-? (
-    <Sun style={iconStyle} />
-      )
-: (
-    <Moon style={{ ...moonStyle, ...iconStyle }} />
+    <Button
+      theme={ButtonTheme.CLEAR}
+      className={classNames('', {}, [className])}
+      onClick={toggleTheme}
+      {...otherProps}
+    >
+      {theme === Theme.LIGHT ? (
+        <Sun style={iconStyle} />
+      ) : (
+        <Moon style={{ ...moonStyle, ...iconStyle }} />
       )}
-      </Button>
+    </Button>
   )
 }

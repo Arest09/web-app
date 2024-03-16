@@ -13,6 +13,6 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [StyleDecorator,ThemeDecorator(Theme.LIGHT)] //каждый story будет обернута в данные декораторы
+  decorators: [StyleDecorator] //каждый story будет обернута в данные декораторы
 };
 export default preview;

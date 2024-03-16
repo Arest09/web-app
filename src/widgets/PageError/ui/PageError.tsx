@@ -12,15 +12,15 @@ const reloadPage = () => {
   location.reload()
 }
 
-export function PageError (props: PageErrorProps) {
+export function PageError(props: PageErrorProps) {
   const { t } = useTranslation()
   const { className } = props
 
   return (
-      <div>
-          {t('Произошла не предвиденная ошибка')}
-          <button onClick={reloadPage}>{t('перезагрузить')}</button>
-          <LangSwitcher />
-      </div>
+    <div>
+      {t('Произошла не предвиденная ошибка')}
+      <button onClick={reloadPage}>{t('перезагрузить')}</button>
+      <LangSwitcher />
+    </div>
   )
 }

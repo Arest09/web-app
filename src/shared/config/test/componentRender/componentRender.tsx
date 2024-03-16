@@ -8,11 +8,11 @@ export interface renderWithRouterOption {
   route?: string
 }
 
-export function componentRender (component: ReactNode, options: renderWithRouterOption = {}) {
+export function componentRender(component: ReactNode, options: renderWithRouterOption = {}) {
   const { route = '/' } = options
   return render(
-      <MemoryRouter initialEntries={[route]}>
-          <I18nextProvider i18n={i18nForTest}>{component}</I18nextProvider>
-      </MemoryRouter>
+    <MemoryRouter initialEntries={[route]}>
+      <I18nextProvider i18n={i18nForTest}>{component}</I18nextProvider>
+    </MemoryRouter>,
   )
 }

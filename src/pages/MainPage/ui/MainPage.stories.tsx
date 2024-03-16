@@ -6,7 +6,7 @@ import MainPage from './MainPage'
 
 const meta: Meta<typeof MainPage> = {
   component: MainPage,
-  title: 'pages/MainPage'
+  title: 'pages/MainPage',
 }
 
 type Story = StoryObj<typeof MainPage>
@@ -21,29 +21,31 @@ export default meta
 export const DARK: Story = {
   decorators: [
     (Story) => (
-        <div
-          className='page-wrapper'
-          style={{
-          height: '100vh'
-        }}>
-            <Story />
-        </div>
+      <div
+        className="page-wrapper"
+        style={{
+          height: '100vh',
+        }}
+      >
+        <Story />
+      </div>
     ),
-    ThemeDecorator(Theme.DARK)
+    ThemeDecorator(Theme.DARK),
   ],
-  args: {}
+  args: {},
 }
 export const LIGHT: Story = {
   args: {},
   decorators: [
     (Story) => (
-        <div
-          className='page-wrapper'
-          style={{
-          height: '100vh'
-        }}>
-            <Story />
-        </div>
-    )
-  ]
+      <div
+        className="page-wrapper"
+        style={{
+          height: '100vh',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 }

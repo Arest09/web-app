@@ -1,15 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { SideBar } from './SideBar'
+import { Modal } from './Modal'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/app/provider/ThemeProvider'
 
-const meta: Meta<typeof SideBar> = {
-  component: SideBar,
-  title: 'widgets/SideBar',
+const meta: Meta<typeof Modal> = {
+  component: Modal,
+  title: 'Shared/Modal',
+  args: {
+    container: null,
+  },
 }
 
-type Story = StoryObj<typeof SideBar>
+type Story = StoryObj<typeof Modal>
 
 /*
  *👇 Render functions are a framework specific feature to allow you control on how the component renders.
@@ -18,10 +21,17 @@ type Story = StoryObj<typeof SideBar>
  */
 export default meta
 
-export const DARK: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  args: {},
+export const PRIMARY: Story = {
+  args: {
+    isOpen: true,
+    children: 'text',
+  },
 }
-export const LIGHT: Story = {
-  args: {},
-}
+
+// export const Dark: Story = {
+//   decorators: [ThemeDecorator(Theme.DARK)],
+//   args: {
+//     isOpen: true,
+//     children: 'text',
+//   },
+// }

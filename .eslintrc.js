@@ -7,7 +7,9 @@ module.exports = {
   extends: [
     "standard-with-typescript",
     "plugin:react/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:react-hooks/recommended",    
+    "prettier"
   ],
   
   overrides: [
@@ -31,12 +33,10 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "i18next", "@typescript-eslint"],
+  plugins: ["react", "i18next", "@typescript-eslint",'prettier', "react-hooks"],
   rules: {
     "react/react-in-jsx-scope": "off",
     indent: "off",
-    "react/jsx-indent": [1, 4],
-    "react/jsx-indent-props": [1, 2],
     "@typescript-eslint/type-annotation-spacing": "warn",
     "@typescript-eslint/indent": ["warn", 2, { ignoredNodes: ["JSXElement *", "JSXElement"] }],
     "@typescript-eslint/strict-boolean-expressions": 0,
@@ -48,6 +48,13 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": 0,
     "i18next/no-literal-string": ["warn", { markupOnly: false }],
     "@typescript-eslint/promise-function-async": 0,
-    "max-len":["warn",{ignoreComments:true,code:100}]
+    "prettier/prettier": 
+    [ "warn",
+      {
+        "endOfLine": "auto"}
+    ],
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+
   },
 }

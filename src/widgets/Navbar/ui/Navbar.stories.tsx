@@ -6,7 +6,7 @@ import { Theme } from '@/app/provider/ThemeProvider'
 
 const meta: Meta<typeof Navbar> = {
   component: Navbar,
-  title: 'widgets/Navbar'
+  title: 'widgets/Navbar',
 }
 
 type Story = StoryObj<typeof Navbar>
@@ -19,15 +19,9 @@ type Story = StoryObj<typeof Navbar>
 export default meta
 
 export const DARK: Story = {
-  decorators: [
-    ThemeDecorator(Theme.DARK)
-  ],
-  args: {
-
-  }
+  decorators: [ThemeDecorator(Theme.DARK)],
+  args: {},
 }
 export const LIGHT: Story = {
-  args: {
-
-  }
+  args: {},
 }

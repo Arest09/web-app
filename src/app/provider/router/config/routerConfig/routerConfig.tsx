@@ -7,14 +7,14 @@ import { type RouteProps } from 'react-router-dom'
 export const routeConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.MAIN]: {
     element: <MainPage />,
-    path: routePath.main
+    path: routePath.main,
   },
   [AppRoutes.ABOUT]: {
     element: <AboutPage />,
-    path: routePath.about
+    path: routePath.about,
   },
   [AppRoutes.NOUT_FOUND]: {
-    element: <NotFoundPage/>,
-    path: routePath.not_found
-  }
+    element: <NotFoundPage />,
+    path: routePath.not_found,
+  },
 }
