@@ -3,6 +3,7 @@ import webpack from 'webpack'
 import { type BuildOptions } from './types/congif'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import {buildDefinePlugin} from './plugins/buildDefinePlugin'
 
 export function buildPlugins ({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
   const plugins = [
@@ -12,9 +13,7 @@ export function buildPlugins ({ paths, isDev }: BuildOptions): webpack.WebpackPl
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css'
     }),
-    new webpack.DefinePlugin({
-      __IS__DEV: JSON.stringify(isDev)
-    })
+    buildDefinePlugin(isDev)
   ]
 
   if (isDev) {

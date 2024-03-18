@@ -3,9 +3,9 @@
 @import "theme/dark";
 @import "theme/light";
 
-// * {
-//   transition: color, background-color, 0.3s;
-// }
+* {
+  transition: color, background-color, 0.3s;
+}
 
 body{
   font: var(--font-m);

@@ -1,5 +1,5 @@
 // import { BugButton } from '@/app/provider/ErrorBoundary'
-import { Button, ButtonTheme } from '@/shared/ui/Buttton/Button'
+import { Counter } from '@/entities/Counter'
 import { useTranslation } from 'react-i18next'
 
 function MainPage() {
@@ -7,6 +7,7 @@ function MainPage() {
   return (
     <div>
       {t('Главная страница')}
+      <Counter />
       {/* <BugButton /> */}
     </div>
   )

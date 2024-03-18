@@ -4,5 +4,7 @@
   "Произошла не предвиденная ошибка": "Unexpected error",
   "перезагрузить":"reload page",
   "вызвать ошибку":"throw error",
-  "войти":"login"
+  "войти":"login",
+  "Увеличить": "increment",
+  "Уменьшить":"decrement"
 }

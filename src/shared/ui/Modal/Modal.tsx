@@ -55,7 +55,6 @@ export function Modal(props: ModalProps) {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   }
-  console.log(mods,'mods')
   return (
     <Portal container={container}>
       <div className={classNames(cls.Modal, mods, [className])}>
