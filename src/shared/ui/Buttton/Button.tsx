@@ -1,7 +1,6 @@
 import { classNames } from '@/shared/lib'
 import { type PropsWithChildren } from 'react'
 import cls from './Button.module.scss'
-import { Portal } from '../Portal/Portal'
 
 export enum ButtonTheme {
   PRIMARY = 'primary',
@@ -23,17 +22,27 @@ interface ButtonProps extends PropsWithChildren, React.ButtonHTMLAttributes<HTML
   theme?: ButtonTheme
   square?: boolean
   size?: ButtonSize
+  disabled?: boolean
 }
 
 export const Button = (props: ButtonProps) => {
-  const { className, children, theme = ButtonTheme.PRIMARY, square, size, ...otherProps } = props
+  const {
+    className,
+    children,
+    theme = ButtonTheme.PRIMARY,
+    square,
+    size,
+    disabled,
+    ...otherProps
+  } = props
 
   const mods: Record<string, boolean> = {
     [cls.square]: square,
+    [cls.disabled]: disabled,
   }
 
   return (
-     <button
+    <button
       className={classNames(cls.Button, { ...mods }, [className, cls[theme], cls[size]])}
       {...otherProps}
     >

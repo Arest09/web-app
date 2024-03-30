@@ -5,7 +5,9 @@ import { LangSwitcher } from '@/features/LangeSwitcher'
 import { useTranslation } from 'react-i18next'
 import { Button, ButtonTheme } from '@/shared/ui/Buttton/Button'
 import { useCallback, useState } from 'react'
-import { Modal } from '@/shared/ui/Modal/Modal'
+import { LoginModal } from '@/features/AuthByUserName'
+import { useDispatch, useSelector } from 'react-redux'
+import { getUserAuthData, userAction } from '@/entities/User'
 
 interface NavbarProps {
   className?: string
@@ -14,10 +16,34 @@ interface NavbarProps {
 export function Navbar({ className }: NavbarProps) {
   const { t } = useTranslation()
   const [isAuthModal, setIsAuthModal] = useState(false)
+  const authData = useSelector(getUserAuthData)
+  const dispatch = useDispatch()
 
-  const onToggleModal = useCallback(() => {
-    setIsAuthModal((prev) => !prev)
+  const onClose = useCallback(() => {
+    setIsAuthModal(false)
   }, [])
+
+  const onOpen = useCallback(() => {
+    setIsAuthModal(true)
+  }, [])
+
+  const onLogout = () => {
+    dispatch(userAction.logout())
+  }
+
+  if (authData) {
+    return (
+      <div className={classNames(cls.Navbar, { second: false }, [className])}>
+        <div className={cls.navbarItem}>
+          <ThemeSwitcher />
+          <LangSwitcher className={cls.langSwitcher} />
+        </div>
+        <Button onClick={onLogout} theme={ButtonTheme.CLEAR}>
+          {t('Выйти')}
+        </Button>
+      </div>
+    )
+  }
 
   return (
     <div className={classNames(cls.Navbar, { second: false }, [className])}>
@@ -25,12 +51,10 @@ export function Navbar({ className }: NavbarProps) {
         <ThemeSwitcher />
         <LangSwitcher className={cls.langSwitcher} />
       </div>
-      <Button onClick={onToggleModal} theme={ButtonTheme.CLEAR}>
+      <Button onClick={onOpen} theme={ButtonTheme.CLEAR}>
         {t('войти')}
       </Button>
-      <Modal onClose={onToggleModal} isOpen={isAuthModal}>
-        auth
-      </Modal>
+      <LoginModal onClose={onClose} isOpen={isAuthModal} className={cls.LoginModal} width="500px" />
     </div>
   )
 }

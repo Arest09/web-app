@@ -1,9 +1,10 @@
 :root,
-.App.light {
+.app_light_theme{
   --background-color: #d5d5d5;
-  --background-color-inverted: #595959;
+  --background-color-inverted: #242526;
   --text-color: #000;
-  --primary: #d5d5d5;
-  --secondary: #f2f0f1;
+  --text-color-inverted: #ffff;
+  --primary: #2b74d4;
+  --secondary: #4ba0ff;
   --navbar-box-shadow: 0 12px 6px -9px rgb(34 60 80 / 32%);
 }

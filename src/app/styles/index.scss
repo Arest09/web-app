@@ -1,10 +1,10 @@
-@import "reset";
 @import "variables/global";
 @import "theme/dark";
 @import "theme/light";
+@import "reset";
 
 * {
-  transition: color, background-color, 0.3s;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 body{
@@ -12,8 +12,11 @@ body{
   color: var(--primary-color);
 }
 
+button{
+  cursor: pointer;
+}
+
 .App {
-  background-color: var(--bg-color);
   min-height: 100vh;
 }
 

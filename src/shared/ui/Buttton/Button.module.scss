@@ -6,22 +6,20 @@
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  color: var(--text-color);
   padding: 6px 15px;
 }
 
 .clear{
-  &:hover {
-    background-color: var(--primary);
-  }
+  color: var(--text-color);
 }
 
 .primary {
   color: #2b74d4;
-  background-color: var(--primary);
+  background-color: var(--background-color);
 
   &:hover {
     background-color: var(--secondary);
+    color: var(--text-color);
   }
 }
 
@@ -30,16 +28,18 @@
   background-color: var(--secondary);
 
   &:hover {
-    background-color: var(--primary);
+    background-color: var(--background-color);
+    color: var(--text-color);
   }
 }
 
 .outline{
   border: 1px solid var(--text-color);
   border-radius: 5px;
+  color: var(--primary);
 
   &:hover {
-    background-color: var(--secondary);
+    background-color: var(--text-color);
   }
 }
 
@@ -94,4 +94,8 @@
 
 .size_xl{
   font-size: var(--font-size-xl);
+}
+
+.disabled{
+  opacity: 0.5;
 }

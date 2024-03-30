@@ -1,8 +1,10 @@
-.App.dark {
+.app_dark_theme{
   --background-color: #242526;
+  --background-color-inverted: #d5d5d5;
   --text-color: #ffff;
-  --primary: #18191a;
-  --secondary: #28292a;
+  --text-color-inverted: #242526;
+  --primary: #1f84e8;
+  --secondary: #4c8cc5;
 }
 
 // NOTE: в зависимости от класса (dark light ) меняются значения перменных.

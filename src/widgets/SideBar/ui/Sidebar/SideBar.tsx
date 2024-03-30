@@ -3,7 +3,7 @@ import cls from './SideBar.module.scss'
 import { type PropsWithChildren, useState } from 'react'
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Buttton/Button'
 import { useTranslation } from 'react-i18next'
-import { AppLink } from '@/shared/ui/AppLink/AppLink'
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink'
 import { routePath } from '@/shared/config'
 import MainIcon from '@/shared/assets/icons/main.svg'
 import AboutIcon from '@/shared/assets/icons/about.svg'
@@ -28,12 +28,14 @@ export function SideBar(props: SideBarProps) {
     >
       <div className={cls.links}>
         <AppLink
+          theme={AppLinkTheme.PRIMARY}
           className={classNames(cls.linkItem, { [cls.collapsedLink]: collapsed })}
           to={routePath.main}
         >
           {collapsed ? <MainIcon /> : t('главная')}
         </AppLink>
         <AppLink
+          theme={AppLinkTheme.PRIMARY}
           className={classNames(cls.linkItem, { [cls.collapsedLink]: collapsed })}
           to={routePath.about}
         >

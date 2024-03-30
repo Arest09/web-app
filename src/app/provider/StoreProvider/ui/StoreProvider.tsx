@@ -4,13 +4,13 @@ import { type StateScheme } from '../config/StateScheme'
 
 interface StoreProviderProps {
   children: React.ReactNode
-  initialState?: StateScheme
+  initialState?: Partial<StateScheme> // используется для тестов
 }
 
 export const StoreProvider = (props: StoreProviderProps) => {
   const { children, initialState } = props
 
-  const store = createReduxStore(initialState)
+  const store = createReduxStore(initialState as StateScheme)
 
   return <Provider store={store}>{children}</Provider>
 }

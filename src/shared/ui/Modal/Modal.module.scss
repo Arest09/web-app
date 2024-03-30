@@ -1,7 +1,7 @@
 
 
 .Modal{
-  position: absolute;
+  position: fixed;
   inset:0;
   opacity: 0;
   pointer-events: none; // рассмотреть свойства 
@@ -13,7 +13,8 @@
   }
 
   .content{
-    background-color: var(--background-color);
+    background-color: var(--background-color-inverted);
+    color: var(--text-color-inverted);
     padding: 30px;
     border-radius: 7px;
     width: 60%;

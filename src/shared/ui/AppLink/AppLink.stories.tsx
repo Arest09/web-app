@@ -45,5 +45,5 @@ export const SECONDARY_DARK: Story = {
     children: 'ссылка 2',
     theme: AppLinkTheme.SECONDARY,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  decorators: [ThemeDecorator(Theme.LIGHT)],
 }

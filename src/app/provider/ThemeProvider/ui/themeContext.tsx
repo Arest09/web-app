@@ -3,8 +3,8 @@ import { type FC, useMemo, useState, createContext, type PropsWithChildren } fro
 export const LOCAL_STORAGE_THEME_KEY = 'theme'
 
 export enum Theme {
-  LIGHT = 'light',
-  DARK = 'dark',
+  LIGHT = 'app_light_theme',
+  DARK = 'app_dark_theme',
 }
 
 interface ThemeContextProps {

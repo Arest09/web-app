@@ -1,17 +1,23 @@
 .AppLink {
   padding: 5px;
   border-radius: 5px;
+  color: var(--primary);
 
-  &:hover {
-    background-color: var(--primary);
-    transition: background-color 0.5s;
-  }
 }
 
 .primary{
-  color: var(--text-color);
+  color: var(--primary);
+
+  &:hover{
+    background-color: var(--background-color);
+  }
+
 }
 
 .secondary{
-  color: green;
+  color: var(--secondary);
+
+  &:hover{
+    background-color: var(--background-color);
+  }
 }

@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Navbar } from './Navbar'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/app/provider/ThemeProvider'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 
 const meta: Meta<typeof Navbar> = {
   component: Navbar,
@@ -24,4 +25,18 @@ export const DARK: Story = {
 }
 export const LIGHT: Story = {
   args: {},
+}
+
+export const AUTHORIZED: Story = {
+  args: {},
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {
+          userName: 'a',
+          id: ' 1',
+        },
+      },
+    }),
+  ],
 }

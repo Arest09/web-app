@@ -38,7 +38,7 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     indent: "off",
     "@typescript-eslint/type-annotation-spacing": "warn",
-    "@typescript-eslint/indent": ["warn", 2, { ignoredNodes: ["JSXElement *", "JSXElement"] }],
+    // "@typescript-eslint/indent": ["warn", 2, { ignoredNodes: ["JSXElement *", "JSXElement"] }],
     "@typescript-eslint/strict-boolean-expressions": 0,
     "@typescript-eslint/prefer-nullish-coalescing": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
@@ -54,7 +54,7 @@ module.exports = {
         "endOfLine": "auto"}
     ],
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
-
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    'react/display-name':0
   },
 }

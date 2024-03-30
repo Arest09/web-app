@@ -1,0 +1,37 @@
+.InputWrapper{
+  position: relative;
+  max-width: 350px;
+  margin: 8px;
+}
+
+.Input{
+  padding: 16.5px 14px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid black;
+  transition: border 0.3s;
+  width: 100%;
+  background-color: var(--background-color);
+  
+
+  &:focus{
+    border: 2px solid var(--primary);
+  }
+}
+
+.placeholder{
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 0;
+  transform: translate(30%, -50%);
+  color: black;
+  transition: top 0.3s;
+  border-radius: 7px;
+  background-color: transparent;
+
+  &.focus{
+    top: 0;
+    background-color: var(--background-color);
+  }
+}
