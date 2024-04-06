@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib'
 import cls from './Modal.module.scss'
-import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
+import { lazy, useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { Portal } from '../Portal/Portal'
 import { useTheme } from '@/app/provider/ThemeProvider'
 
@@ -11,10 +11,11 @@ interface ModalProps {
   onClose?: () => void
   container?: HTMLElement
   width?: string
+  lazy?: boolean
 }
 
 export function Modal(props: ModalProps) {
-  const { className, children, isOpen, onClose, container, width } = props
+  const { className, children, isOpen, onClose, container, width, lazy } = props
 
   const { theme } = useTheme()
 
@@ -58,6 +59,10 @@ export function Modal(props: ModalProps) {
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
+  }
+
+  if (lazy) {
+    return null
   }
 
   return (

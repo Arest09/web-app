@@ -54,7 +54,7 @@ export function Navbar({ className }: NavbarProps) {
       <Button onClick={onOpen} theme={ButtonTheme.CLEAR}>
         {t('войти')}
       </Button>
-      <LoginModal onClose={onClose} isOpen={isAuthModal} className={cls.LoginModal} width="500px" />
+      {isAuthModal && <LoginModal onClose={onClose} isOpen={isAuthModal} className={cls.LoginModal} width="500px" />}
     </div>
   )
 }

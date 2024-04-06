@@ -41,9 +41,7 @@ export const Input = memo((props: InputProps) => {
   return (
     <div className={classNames(cls.InputWrapper, {}, [className])} onChange={onChangeHandler}>
       <label style={{ display: 'block', width: '100%' }}>
-        <span className={classNames(cls.placeholder, { [cls.focus]: isFocused || value })}>
-          {placeholder}
-        </span>
+        <span className={classNames(cls.placeholder, { [cls.focus]: isFocused || value })}>{placeholder}</span>
         <input
           ref={ref}
           type={type}
