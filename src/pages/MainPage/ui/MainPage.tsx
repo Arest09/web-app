@@ -18,6 +18,7 @@ function MainPage() {
     <div>
       {t('Главная страница')}
       <Input onChange={onChange} value={value} placeholder="foo" />
+      <Counter />
       {/* <BugButton /> */}
     </div>
   )
